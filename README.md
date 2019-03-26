@@ -41,9 +41,9 @@ All right, once the basic block is constructed, let's move to the next.
 
 ```java
 
-        String[] genesisTransactions={"Satoshi sent me 10000000 bitcoins","I sent back Satoshi 1 bitcoin,hhhhhh"};
-        Block genesisBlock=new Block(0,genesisTransactions);
-        System.out.println(genesisBlock.getCurrentBlockHash());
+String[] genesisTransactions={"Satoshi sent me 10000000 bitcoins","I sent back Satoshi 1 bitcoin,hhhhhh"};
+Block genesisBlock=new Block(0,genesisTransactions);
+System.out.println(genesisBlock.getCurrentBlockHash());
 
 ```
 
@@ -56,18 +56,20 @@ In the main function, I manually define the very first block called genesis bloc
 Then, I will define two following blocks(block1,block2)
 
 ```java
-				String[] transactions1={"Satoshi sent Obama 10 bitcoins","Obama sent Ray 1 bitcoin"};
-        Block block1=new Block(genesisBlock.getCurrentBlockHash(),transactions1);
-        System.out.println(block1.getCurrentBlockHash());
 
+String[] transactions1={"Satoshi sent Obama 10 bitcoins","Obama sent Ray 1 bitcoin"};
+Block block1=new Block(genesisBlock.getCurrentBlockHash(),transactions1);
+System.out.println(block1.getCurrentBlockHash());
 
-        String[] transactions2={"Satoshi sent James 999 bitcoins","James sent Satoshi 900 bitcoins"};
-        Block block2=new Block(block1.getCurrentBlockHash(),transactions2);
-        System.out.println(block2.getCurrentBlockHash());
+String[] transactions2={"Satoshi sent James 999 bitcoins","James sent Satoshi 900 bitcoins"};
+Block block2=new Block(block1.getCurrentBlockHash(),transactions2);
+System.out.println(block2.getCurrentBlockHash());
 ```
 
 > -1971114405 // hashcode of genesis block
+>
 > -855672335 // hashcode of block1
+>
 > -478407549 // hashcode of block2
 
 
@@ -79,7 +81,9 @@ In order to see how tampering the previous block will affect the following block
 The result will be different:
 
 > 1113972026 //hashcode of genesis block
+>
 > 292726514 //hashcode of block1
+>
 > 762218402 //hashcode of block2
 
 
